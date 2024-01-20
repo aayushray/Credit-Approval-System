@@ -19,7 +19,18 @@ class Eligibility(serializers.ModelSerializer):
         model = Loan
         fields = ['customer_id', 'loan_amount', 'interest_rate', 'tenure']
 
-class CreateLoan(serializers.ModelSerializer):
+class CreateLoan(serializers.Serializer):
+    customer_id = serializers.IntegerField()
+    loan_amount = serializers.FloatField()
+    tenure = serializers.IntegerField()
+    interest_rate = serializers.FloatField()
+
+class LoanSerializer(serializers.ModelSerializer):
     class Meta:
         model = Loan
-        fields = ['customer_id', 'loan_amount', 'interest_rate', 'tenure']
+        fields = ['loan_id', 'loan_amount', 'monthly_payment', 'interest_rate', 'tenure']
+
+class LoanByCustomerId(serializers.ModelSerializer):
+    class Meta:
+        model = Loan
+        fields = ['loan_id', 'loan_amount', 'interest_rate', 'monthly_payment']

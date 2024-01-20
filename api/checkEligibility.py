@@ -69,13 +69,13 @@ def criteriaCheck(customer_id):
         credit_score = round((criteria1 + criteria2 + criteria3 + criteria4)/4, 2)
     
     if credit_score >= 50:
-        return {True, None, None}
+        return True, None, None
     elif credit_score >= 30 and credit_score < 50:
-        return {True, 12, None}
+        return True, 12, None
     elif credit_score >= 10 and credit_score < 30: 
-        return {True, 16, None}
+        return True, 16, None
     else:
         if criteria3:
-            return {False, None, 'Your sum of all current loans have exceded the Approved Limit'}
+            return False, None, 'Your sum of all current loans have exceded the Approved Limit'
         else:
-            return {False, None, f'Your Credit Score is {credit_score}(Below 10)'}
+            return False, None, f'Your Credit Score is {credit_score}(Below 10)'
