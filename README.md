@@ -20,7 +20,11 @@ This project is a Credit Approval System built using Django. It allows users to 
     ```bash
     python manage.py createsuperuser
     ```
-5. Start the development server:
+5. Running the data_upload script to upload data from Excel to the database:
+    ```bash
+    python manage.py runscript data_upload.py
+    ```
+6. Start the development server:
     ```bash
     python manage.py runserver
     ```
