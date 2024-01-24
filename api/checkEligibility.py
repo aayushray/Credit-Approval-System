@@ -13,11 +13,12 @@ def criteriaCheck(customer_id):
 
     for loan in loans:
         loan_end_date = loan.end_date
-        total_past_loans += 1
         emis_paid_this_year = 0
         
-        if (loan_end_date <= current_date) and (loan.emi_paid_on_time == loan.tenure):
-            past_loan_paid_on_time += 1
+        if (loan_end_date <= current_date):
+            total_past_loans += 1
+            if (loan.emi_paid_on_time == loan.tenure):
+                past_loan_paid_on_time += 1
         
         if (loan_end_date.year >= current_date.year):
             emis_paid_this_year = loan.monthly_payment
