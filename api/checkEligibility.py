@@ -31,9 +31,9 @@ def criteriaCheck(customer_id):
 
 
     #setting CRITERIA 2:
-    if (total_past_loans >= 6):
+    if (total_past_loans >= 4):
         criteria2 = 100
-    elif (total_past_loans >= 4):
+    elif (total_past_loans >= 3):
         criteria2 = 75
     elif (total_past_loans >= 2):
         criteria2 = 50
